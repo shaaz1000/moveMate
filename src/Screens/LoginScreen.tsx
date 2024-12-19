@@ -32,7 +32,7 @@ const Login: React.FC = () => {
     };
 
     const handleSendCode = () => {
-        navigation.navigate(AuthScreens.Otp, { phoneNumber });
+        navigation.navigate(AuthScreens.OtpScreen, { phoneNumber });
     };
 
     const dismissKeyboard = () => {

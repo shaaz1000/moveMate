@@ -68,7 +68,7 @@ const Onboarding: React.FC = () => {
     };
 
     const handleNavigation = () => {
-        navigation.navigate(AuthScreens.Login)
+        navigation.navigate(AuthScreens.LoginScreen)
     }
     const Footer = () => (
         <View style={styles.footer}>

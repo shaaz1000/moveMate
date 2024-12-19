@@ -1,10 +1,17 @@
-export const AuthScreens = {
-    Onboarding: 'OnboardingScreen',
-    Login: 'LoginScreen',
-    Otp: "OtpScreen"
+import { AuthStackParamList, AppStackParamList } from './type';
+
+export const AuthScreens: Record<keyof AuthStackParamList, keyof AuthStackParamList> = {
+    OnboardingScreen: 'OnboardingScreen',
+    LoginScreen: 'LoginScreen',
+    OtpScreen: 'OtpScreen',
+    CompleteProfileScreen: 'CompleteProfileScreen',
+    PrivacyPolicyScreen: 'PrivacyPolicyScreen',
 };
 
-export const AppScreens = {
-    Home: 'HomeScreen',
-    Dashboard: 'DashboardScreen',
+export const AppScreens: Record<keyof AppStackParamList, keyof AppStackParamList> = {
+    HomeScreen: 'HomeScreen',
+    OrderScreen: 'OrderScreen',
+    NotificationScreen: 'NotificationScreen',
+    AccountScreen: 'AccountScreen',
+    AppLayoutScreen: "AppLayoutScreen"
 };

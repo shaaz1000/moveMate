@@ -11,20 +11,21 @@ import {
 } from 'react-native';
 import { colors } from '../theme/colors';
 import { typography } from '../theme/typography';
+import { AuthScreens } from '../navigation/ScreenNames';
+import { RootNavigationProp, RootRouteProp } from '../navigation/type';
 
-interface OtpScreenProps {
-    route: {
-        params: { phoneNumber: string };
-    };
-}
 
-const OtpScreen: React.FC<OtpScreenProps> = ({ route }) => {
+type OtpScreenProps = {
+    route: RootRouteProp<'OtpScreen'>;
+    navigation: RootNavigationProp<'OtpScreen'>;
+};
+
+const OtpScreen: React.FC<OtpScreenProps> = ({ route, navigation }) => {
     const { phoneNumber } = route.params;
     const [otp, setOtp] = useState<string[]>(['', '', '', '']);
     const [timer, setTimer] = useState(60);
     const [error, setError] = useState(false);
     const inputs = useRef<TextInput[]>([]);
-
     useEffect(() => {
         const interval = setInterval(() => {
             setTimer(prev => (prev > 0 ? prev - 1 : 0));
@@ -57,8 +58,9 @@ const OtpScreen: React.FC<OtpScreenProps> = ({ route }) => {
         if (enteredOtp !== '1234') {
             setError(true);
         } else {
+            navigation.navigate(AuthScreens.CompleteProfileScreen)
             setError(false);
-            console.log('OTP Verified Successfully!');
+
         }
     };
     console.log(error)

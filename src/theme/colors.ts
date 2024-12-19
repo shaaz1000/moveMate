@@ -13,5 +13,8 @@ export const colors = {
     border: {
         primary: '#E4E4E7',
         secondary: '#4563D6',
+        light: "#D4D4D4"
     },
+    grey: "#636464",
+    blue: '#18487F'
 };
